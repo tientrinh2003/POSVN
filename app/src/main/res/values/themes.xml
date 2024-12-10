@@ -3,7 +3,14 @@
     <style name="Base.Theme.POSVNTIEN" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="bottomNavigationStyle">@style/CustomBottomNavigationStyle</item>
     </style>
 
     <style name="Theme.POSVNTIEN" parent="Base.Theme.POSVNTIEN" />
+
+    <style name="CustomBottomNavigationStyle" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemTextColor">@color/white</item> <!-- Set menu text color to white -->
+        <item name="itemIconTint">@color/white</item> <!-- Set icon tint to white -->
+        <item name="backgroundTint">@color/red</item> <!-- Set background color (optional) -->
+    </style>
 </resources>
