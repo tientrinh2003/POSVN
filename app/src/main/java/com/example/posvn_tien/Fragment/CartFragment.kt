@@ -1,5 +1,6 @@
 package com.example.posvn_tien.Fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.posvn_tien.Activity.CheckOutActivity
 import com.example.posvn_tien.Adapter.CartItemAdapter
 import com.example.posvn_tien.R
 import com.example.posvn_tien.databinding.FragmentCartBinding
@@ -47,7 +49,9 @@ class CartFragment : Fragment() {
         // Checkout button
         binding.checkoutButton.setOnClickListener {
             if (cartItems.isNotEmpty()) {
-                Toast.makeText(requireContext(), "Proceeding to checkout", Toast.LENGTH_SHORT).show()
+                // Use requireContext() as the context for the Intent
+                val intent = Intent(requireContext(), CheckOutActivity::class.java)
+                startActivity(intent)
             } else {
                 Toast.makeText(requireContext(), "Cart is empty!", Toast.LENGTH_SHORT).show()
             }
