@@ -57,6 +57,7 @@ class CartFragment : Fragment() {
             }
         }
 
+
         // Return the root view
         return binding.root
     }

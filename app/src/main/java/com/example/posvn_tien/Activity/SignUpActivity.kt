@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.example.posvn_tien.MainActivity
 import com.example.posvn_tien.databinding.ActivitySigninBinding
 
 class SignUpActivity : AppCompatActivity() {

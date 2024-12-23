@@ -12,7 +12,6 @@ import com.example.posvn_tien.R
 import com.example.posvn_tien.databinding.FragmentHomeBinding
 import com.example.posvn_tien.model.FoodItem
 
-
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var adapter: FoodItemAdapter

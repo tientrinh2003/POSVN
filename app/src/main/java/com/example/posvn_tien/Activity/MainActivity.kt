@@ -1,4 +1,4 @@
-package com.example.posvn_tien
+package com.example.posvn_tien.Activity
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.posvn_tien.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -16,7 +17,5 @@ class MainActivity : AppCompatActivity() {
         val navController : NavController = findNavController(R.id.fragmentContainerView)
         val bottomnav = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomnav.setupWithNavController(navController)
-
-
     }
 }

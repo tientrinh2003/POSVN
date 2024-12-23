@@ -40,6 +40,7 @@ class FoodItemAdapter(private var items: List<FoodItem>) : RecyclerView.Adapter<
     }
 
     // Method to update the list dynamically
+
     fun updateList(newList: List<FoodItem>) {
         items = newList // Update the list
         notifyDataSetChanged() // Notify the adapter to refresh the UI
