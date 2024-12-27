@@ -1,11 +1,13 @@
 package com.example.posvn_tien.Fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.posvn_tien.Activity.CheckOutActivity
 import com.example.posvn_tien.Adapter.CartItemAdapter
 import com.example.posvn_tien.data.CartDataProvider
 import com.example.posvn_tien.databinding.FragmentCartBinding
@@ -40,6 +42,21 @@ class CartFragment : Fragment() {
         // Calculate total price
         updateTotalPrice()
 
+<<<<<<< HEAD
+=======
+        // Checkout button
+        binding.checkoutButton.setOnClickListener {
+            if (cartItems.isNotEmpty()) {
+                // Use requireContext() as the context for the Intent
+                val intent = Intent(requireContext(), CheckOutActivity::class.java)
+                startActivity(intent)
+            } else {
+                Toast.makeText(requireContext(), "Cart is empty!", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+
+>>>>>>> a5bb51bc070dcf37a05a199f7337753794ae3e74
         // Return the root view
         return binding.root
     }

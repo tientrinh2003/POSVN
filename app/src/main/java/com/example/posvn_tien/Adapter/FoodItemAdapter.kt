@@ -44,6 +44,11 @@ class FoodItemAdapter(private var items: List<FoodItem>) : RecyclerView.Adapter<
         }
     }
 
+<<<<<<< HEAD
+=======
+    // Method to update the list dynamically
+
+>>>>>>> a5bb51bc070dcf37a05a199f7337753794ae3e74
     fun updateList(newList: List<FoodItem>) {
         items = newList
         notifyDataSetChanged()
