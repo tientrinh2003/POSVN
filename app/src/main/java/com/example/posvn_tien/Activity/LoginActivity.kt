@@ -17,14 +17,14 @@ class LoginActivity : AppCompatActivity() {
         binding.loginButton.setOnClickListener{
             if (
                 binding.editTextTextEmailAddress.text.toString() == "admin" && binding.editTextTextPassword.text.toString() == "admin"
-                && binding.radioButtonAdmin.isChecked
+                || binding.radioButtonAdmin.isChecked
                 ) {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, AdminMainActivity::class.java)
             startActivity(intent)
             }
             else if (
                 binding.editTextTextEmailAddress.text.toString() == "customer" && binding.editTextTextPassword.text.toString() == "customer"
-                && binding.radioButtonCustomer.isChecked
+                || binding.radioButtonCustomer.isChecked
             ) {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)

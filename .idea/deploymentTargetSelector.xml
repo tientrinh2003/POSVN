@@ -5,10 +5,14 @@
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
 <<<<<<< HEAD
+<<<<<<< HEAD
         <DropdownSelection timestamp="2024-12-23T17:20:08.562937600Z">
 =======
         <DropdownSelection timestamp="2024-12-23T18:24:56.962677100Z">
 >>>>>>> a5bb51bc070dcf37a05a199f7337753794ae3e74
+=======
+        <DropdownSelection timestamp="2024-12-26T16:57:55.818832400Z">
+>>>>>>> origin/Tien
           <Target type="DEFAULT_BOOT">
             <handle>
               <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\TIEN\.android\avd\Pixel_5_API_35_2.avd" />
