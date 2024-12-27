@@ -8,7 +8,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.posvn_tien.Adapter.FoodItemAdapter
-import com.example.posvn_tien.R
+import com.example.posvn_tien.data.FoodListDataProvider
 import com.example.posvn_tien.databinding.FragmentHomeBinding
 import com.example.posvn_tien.model.FoodItem
 
@@ -16,6 +16,7 @@ import com.example.posvn_tien.model.FoodItem
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var adapter: FoodItemAdapter
+    private val getFoodList = FoodListDataProvider.getFoodList()
     private val foodList = mutableListOf<FoodItem>() // Master list of food items
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,14 +33,8 @@ class HomeFragment : Fragment() {
         // Ensure the SearchView is not iconified by default
         binding.searchView.setIconifiedByDefault(false)
         // Setup food list data
-        foodList.addAll(
-            listOf(
-                FoodItem("Cheese burger", 8.24, R.drawable.hamcheese),
-                FoodItem("Fries", 3.50, R.drawable.hamcheese), // Changed image resource to "fries"
-                FoodItem("Pizza", 12.99, R.drawable.hamcheese),
-                FoodItem("Pasta", 10.50, R.drawable.hamcheese)
-            )
-        )
+        if (foodList.isEmpty())
+            foodList.addAll(getFoodList)
 
         // Setup RecyclerView with GridLayoutManager and Adapter
         adapter = FoodItemAdapter(foodList)

@@ -4,11 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.posvn_tien.Adapter.CartItemAdapter
-import com.example.posvn_tien.R
+import com.example.posvn_tien.data.CartDataProvider
 import com.example.posvn_tien.databinding.FragmentCartBinding
 import com.example.posvn_tien.model.CartItem
 
@@ -28,10 +27,7 @@ class CartFragment : Fragment() {
         binding = FragmentCartBinding.inflate(inflater, container, false)
 
         // Sample data
-        cartItems.apply {
-            add(CartItem("Cheese burger", 8.24, 2, R.drawable.hamcheese))
-            add(CartItem("Fries", 3.50, 1, R.drawable.hamcheese))
-        }
+        cartItems.addAll(CartDataProvider.cartList)
 
         // Set up RecyclerView with LinearLayoutManager and Adapter
         val cartAdapter = CartItemAdapter(cartItems) {
@@ -43,15 +39,6 @@ class CartFragment : Fragment() {
 
         // Calculate total price
         updateTotalPrice()
-
-        // Checkout button
-        binding.checkoutButton.setOnClickListener {
-            if (cartItems.isNotEmpty()) {
-                Toast.makeText(requireContext(), "Proceeding to checkout", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(requireContext(), "Cart is empty!", Toast.LENGTH_SHORT).show()
-            }
-        }
 
         // Return the root view
         return binding.root

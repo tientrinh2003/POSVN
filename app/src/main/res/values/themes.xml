@@ -11,6 +11,6 @@
     <style name="CustomBottomNavigationStyle" parent="Widget.MaterialComponents.BottomNavigationView">
         <item name="itemTextColor">@color/white</item> <!-- Set menu text color to white -->
         <item name="itemIconTint">@color/white</item> <!-- Set icon tint to white -->
-        <item name="backgroundTint">@color/red</item> <!-- Set background color (optional) -->
+        <item name="backgroundTint">@color/green</item> <!-- Set background color (optional) -->
     </style>
 </resources>

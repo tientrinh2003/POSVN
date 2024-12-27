@@ -5,29 +5,22 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/red"
+    android:background="@color/green"
     tools:context=".Activity.Splash_Screen">
 
     <TextView
         android:id="@+id/posvn_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:fontFamily="@font/lobster_regular"
-        android:text="POSVN"
+        android:fontFamily="@font/roboto_regular"
+        android:text="TRINH THUY TIEN _ITITIU21328"
+        android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="60sp"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/twohams"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/twohams" />
 </androidx.constraintlayout.widget.ConstraintLayout>
