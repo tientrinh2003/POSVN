@@ -7,10 +7,10 @@
     <item android:title="Cart"
         android:id="@+id/cartFragment"
         android:icon = "@drawable/fi_br_cart"/>
-    <item android:title="User"
-        android:id="@+id/userFragment"
-        android:icon = "@drawable/fi_br_user"/>
-    <item android:title="History"
-        android:id="@+id/historyFragment"
-        android:icon = "@drawable/list"/>
+<!--    <item android:title="User"-->
+<!--        android:id="@+id/userFragment"-->
+<!--        android:icon = "@drawable/fi_br_user"/>-->
+<!--    <item android:title="History"-->
+<!--        android:id="@+id/historyFragment"-->
+<!--        android:icon = "@drawable/list"/>-->
 </menu>

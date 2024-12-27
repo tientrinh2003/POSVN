@@ -5,15 +5,14 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.posvn_tien.Fragment.CongratsBottomSheet
+import com.example.posvn_tien.Adapter.MenuItemAdapter
 import com.example.posvn_tien.R
-import com.example.posvn_tien.adapter.CheckOutItemAdapter
-import com.example.posvn_tien.databinding.ActivityCheckOutBinding
+import com.example.posvn_tien.databinding.ActivityViewMenuBinding
 import com.example.posvn_tien.model.CartItem
 
-class CheckOutActivity : AppCompatActivity() {
-    private val binding: ActivityCheckOutBinding by lazy {
-        ActivityCheckOutBinding.inflate(layoutInflater)
+class ViewMenuActivity : AppCompatActivity() {
+    private val binding: ActivityViewMenuBinding by lazy {
+        ActivityViewMenuBinding.inflate(layoutInflater)
     }
 
     private val cartItems = mutableListOf<CartItem>()
@@ -29,23 +28,21 @@ class CheckOutActivity : AppCompatActivity() {
             add(CartItem("Fries", 2.99, 1, R.drawable.hamcheese))
             add(CartItem("Soda", 1.99, 3, R.drawable.hamcheese))
         }
-        val totalPrice = cartItems.sumOf { it.price * it.quantity }
-        binding.totalMoneyTV.text = "$totalPrice"
 
-        // Initialize the RecyclerView
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        val adapter = CheckOutItemAdapter(cartItems)
+        val adapter = MenuItemAdapter(cartItems)
+        {
+            // Recalculate total price when an item is removed
+            updateTotalPrice()
+        }
         binding.recyclerView.adapter = adapter
 
-        // Set up the "Paid" button click listener
-        binding.paidButton.setOnClickListener {
-            val bottomSheetDialog = CongratsBottomSheet()
-            bottomSheetDialog.show(supportFragmentManager, bottomSheetDialog.tag)
-        }
         binding.backButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("destination", R.id.cartFragment)
+            val intent = Intent(this, AdminMainActivity::class.java)
             startActivity(intent)
         }
+    }
+    private fun updateTotalPrice() {
+        val total = cartItems.sumOf { it.price * it.quantity }
     }
 }

@@ -1,21 +1,32 @@
 package com.example.posvn_tien.Activity
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.posvn_tien.R
+import com.example.posvn_tien.databinding.ActivityAdminMainBinding
 
 class AdminMainActivity : AppCompatActivity() {
+    private val binding: ActivityAdminMainBinding by lazy {
+        ActivityAdminMainBinding.inflate(layoutInflater)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_admin_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        setContentView(binding.root)
+        binding.cardViewAddMenu.setOnClickListener {
+            val intent = Intent(this, AddItemActivity::class.java)
+            startActivity(intent)
+        }
+        binding.cardViewViewMenu.setOnClickListener {
+            val intent = Intent(this, ViewMenuActivity::class.java)
+            startActivity(intent)
+        }
+        binding.cardViewHistory.setOnClickListener {
+            val intent = Intent(this, ViewOrderActivity::class.java)
+            startActivity(intent)
+        }
+        binding.cardViewLogout.setOnClickListener{
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
     }
 }
